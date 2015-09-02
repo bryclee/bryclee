@@ -1,0 +1,130 @@
+html, body {
+  box-sizing: border-box;
+  font: 20px Century Gothic;
+  margin: 0;
+  min-width: 700px;
+}
+* {
+  box-sizing: inherit;
+}
+
+@small: 12pt;
+@contentBg: #EEEEF6;
+
+@media screen and (min-width: 1000px) {
+  .fixed {
+    position: fixed !important;
+  }
+}
+
+/* Header Bar */
+.header-bar, .header-bar-fill {
+  background-color: white;
+  left: 0;
+  min-height: 110px;
+  top: 0;
+  width: 100%;
+}
+#header-banner {
+  font: 70px courier new;
+  left: 20px;
+  height: 70px;
+  top: 20px;
+  position: relative;
+  -moz-transition: width 1s;
+  -webkit-transition: width 1s;
+}
+#subheader  { font-size: 25px;
+        position: relative; }
+.fill-parent {  position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1; }
+
+/* For the rotating name banner */
+.letter {
+  color: black;
+  position: absolute;
+  margin: 0px 5px;
+  opacity: 1;
+  -moz-transition: left 1s;
+  -webkit-transition: left 1s;
+}
+
+.enter {
+  -moz-animation-duration: 0.8s;
+  -webkit-animation-duration: 0.8s;
+  -moz-animation-name: enter;
+  -webkit-animation-name: enter;
+}
+@-moz-keyframes enter {
+  from  { opacity: 0.2;
+        color: orange;
+        margin-top: -20px;  }
+}
+@-webkit-keyframes enter {
+  from  { opacity: 0.2;
+        color: orange;
+        margin-top: -20px;  }
+}
+
+.exit {
+  opacity: 0;
+  margin-top: 10px;
+  color: blue;
+  -moz-animation-duration: 0.8s;
+  -webkit-animation-duration: 0.8s;
+  -moz-animation-name: exit;
+  -webkit-animation-name: exit;
+}
+@-moz-keyframes exit {
+  from  { opacity: 1;
+        color: black;
+        margin-top: 0px;  }
+}
+@-webkit-keyframes exit {
+  from  { opacity: 1;
+        color: black;
+        margin-top: 0px;  }
+}
+
+/* Main Content styling */
+.main-content {
+  max-width: 1000px;
+  margin: 0px auto;
+}
+.main-content:after {
+  float: clear;
+}
+
+.left-col-wrapper, .left-col {
+  background-color: @contentBg + #100;
+  float: left;
+  min-height: 1px;
+  vertical-align: top;
+  width: 300px;
+}
+.left-col {
+  padding: 20px;
+  top: 110px;
+}
+
+.center-col {
+  overflow: auto;
+  padding: 20px;
+}
+
+.sidebar-about {
+  font-size: 12pt;
+}
+.blog-post {
+  background-color: @contentBg;
+  border-radius: 5px;
+  margin: 30px 20px;
+  padding: 10px 20px;
+  max-width: 600px;
+}
+
+.post-tag {
+  font-size: @small;
+}
