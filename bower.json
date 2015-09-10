@@ -1,0 +1,21 @@
+{
+  "name": "bryclee",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/bryclee/bryclee",
+  "authors": [
+    "Bryan Lee <pygmize.me@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.20"
+  }
+}

@@ -4,8 +4,13 @@
 var posts = [
   {
     title: 'Hello',
-    text: 'This is my first post.',
-    tags: ['Fish', 'Make a wish']
+    text: 'First post goes here',
+    tags: ['Tags', 'Go here']
+  },
+  {
+    title: 'Hello again',
+    text: 'Second post goes here',
+    tags: []
   }
 ];
 
