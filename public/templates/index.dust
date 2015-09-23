@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 {>"layouts/master" /}
 
-{<title}bryclee{/title}
+{<style}
+{/style}
 
 {<body}
   <div class="main-content">

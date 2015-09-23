@@ -1,6 +1,6 @@
 'use strict';
 
-// var IndexModel = require('../models/index');
+var IndexModel = require('../models/index');
 var posts = [
   {
     title: 'Hello',
@@ -16,12 +16,12 @@ var posts = [
 
 module.exports = function (router) {
 
-    // var model = new IndexModel();
+    var model = new IndexModel(posts);
 
     router.get('/', function (req, res) {
 
 
-        res.render('index', {posts: posts});
+        res.render('index', model);
 
 
     });

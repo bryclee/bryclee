@@ -1,7 +1,7 @@
 'use strict';
 
-module.exports = function IndexModel() {
+module.exports = function IndexModel(posts) {
     return {
-        name: 'index'
+        posts: posts || []
     };
 };

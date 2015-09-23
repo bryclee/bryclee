@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{>"layouts/master" /}
+
+{<title} - Sudoku {/title}
+
+{<style}
+  <link rel="stylesheet" href="/css/sudoku/sudoku.css">
+{/style}
+
+{<body}
+  <h1>Hello sudoku game</h1>
+{/body}
