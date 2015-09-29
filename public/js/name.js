@@ -91,11 +91,13 @@
 		setNextWord();
 	};
 
-	if (window) {
+	if (typeof define === 'function') {
+		define(function() { return WordBanner; });
+	} else if (typeof module === 'object' && module.exports) {
+		module.exports = WordBanner;
+	} else if (typeof window === 'object') {
 		window.WordBanner = WordBanner;
-  } else if (module) {
-  	module.exports = WordBanner;
-  } else {
-  	return WordBanner;
-  }
+	}
+
+	return WordBanner;
 })();

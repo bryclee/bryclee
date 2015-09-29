@@ -2,25 +2,18 @@
 
 
 requirejs.config({
-    baseUrl: '../components',
     paths: {
-      js: '.'
+      js: '.',
+      angular: '../components/angular/angular'
+    },
+    shim: {
+      angular: {
+        exports: 'angular'
+      }
     }
 });
 
 
-require(['js/name.js'], function () {
-
-    var app = {
-        initialize: function () {
-          var banner = new window.WordBanner(document.querySelector('#header-banner'));
-          banner.wordList = [
-            'bl', 'bryclee', 'bryan c lee', 'cats are cool', 'so are dogs'
-          ];
-          banner.rotateWords(2000);
-        }
-    };
-
-    app.initialize();
-
+require(['angular'], function(angular) {
+  console.log('loaded', angular);
 });

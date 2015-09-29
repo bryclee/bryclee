@@ -1,4 +1,26 @@
-/* line 1, css/sudoku/sudoku */
-h1 {
-  color: red;
+/* line 8, css/sudoku/sudoku */
+.sudoku-main-box {
+  border: 5px solid black;
+  margin: 0 auto;
+  width: 466px;
+}
+/* line 14, css/sudoku/sudoku */
+.sudoku-sub-box {
+  display: inline-block;
+  border: 1px solid black;
+  width: 152px;
+}
+/* line 20, css/sudoku/sudoku */
+.sudoku-single-box {
+  display: inline-block;
+  position: relative;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+}
+/* line 28, css/sudoku/sudoku */
+.sudoku-single-box:focus {
+  box-shadow: 0 0 5px 3px #88bbdd;
+  outline: 0;
+  z-index: 1;
 }

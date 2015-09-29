@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>bryclee{+title /}</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>bryclee{+title /}</title>
 
-        {+style /}
-        <link rel="stylesheet" href="/css/app.css">
-        <link rel="shortcut icon" href="/favicon.ico">
-    </head>
-    <body>
-        <header class="header-bar">
-            <div class="header-bar-fill fixed">
-                <div class="fixed" id="header-banner">
-                    <a href="/index"><span class="fill-parent"></span></a>
-                </div>
-            </div>
-        </header>
-        <script data-main="/js/app" src="/components/requirejs/require.js"></script>
+    {+style /}
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="shortcut icon" href="/favicon.ico">
+  </head>
+  <body>
+    <header class="header-bar">
+      <div class="header-bar-fill fixed">
+        <div class="fixed" id="header-banner">
+          <a href="/"><span class="fill-parent"></span></a>
+        </div>
+      </div>
+      <script src="/js/name.js"></script>
+      <script>
+        (function() {
 
-        {+body /}
+          var banner = new window.WordBanner(document.querySelector('#header-banner'));
+          banner.wordList = [
+            'bl', 'bryclee', 'bryan c lee', 'cats are cool', 'so are dogs'
+          ];
+          banner.rotateWords(2000);
 
-    </body>
+        })();
+      </script>
+    </header>
+
+    {+body /}
+
+  </body>
 </html>

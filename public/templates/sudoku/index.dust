@@ -8,5 +8,10 @@
 {/style}
 
 {<body}
-  <h1>Hello sudoku game</h1>
+
+  <sudoku-main-box ng-controller="sudokuController"></sudoku-main-box>
+
+  <script src="js/config.js"></script>
+  <script data-main="/js/sudoku/main" src="/components/requirejs/require.js"></script>
+
 {/body}
