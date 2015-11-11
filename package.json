@@ -9,6 +9,9 @@
     "build": "grunt build",
     "all": "npm run build && npm run test"
   },
+  "engines": {
+    "node": "4.2.2"
+  },
   "dependencies": {
     "construx": "^1.0.0",
     "construx-copier": "^1.0.0",
