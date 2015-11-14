@@ -7,8 +7,7 @@
   "scripts": {
     "test": "grunt test",
     "build": "grunt build",
-    "all": "npm run build && npm run test",
-    "postinstall": "bower install && grunt build"
+    "all": "npm run build && npm run test"
   },
   "engines": {
     "node": "4.2.2"
