@@ -15,18 +15,7 @@
           <a href="/"><span class="fill-parent"></span></a>
         </div>
       </div>
-      <script src="/js/name.js"></script>
-      <script>
-        (function() {
-
-          var banner = new window.WordBanner(document.querySelector('#header-banner'));
-          banner.wordList = [
-            'bl', 'bryclee', 'bryan c lee', 'cats are cool', 'so are dogs'
-          ];
-          banner.rotateWords(2000);
-
-        })();
-      </script>
+      <script src="/js/name.bundle.js"></script>
     </header>
 
     {+body /}

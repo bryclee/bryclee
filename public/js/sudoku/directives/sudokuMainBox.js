@@ -1,21 +1,15 @@
 'use strict';
 
-define([
-  'angular',
-  'directives/sudokuSingleBox'
-], function(angular, sudokuSingleBox) {
+import 'angular';
+import { moduleName as sudokuSingleBox } from './sudokuSingleBox';
 
-  var moduleName = 'sudokuMainBoxDirective';
+export var moduleName = 'sudokuMainBoxDirective';
 
-  angular
-    .module(moduleName, [sudokuSingleBox])
-    .directive('sudokuMainBox', [function() {
-      return {
-        restict: 'E',
-        templateUrl: 'js/sudoku/directives/templates/sudokuMainBox.html'
-      };
-    }]);
-
-  return moduleName;
-
-});
+angular
+  .module(moduleName, [sudokuSingleBox])
+  .directive('sudokuMainBox', [function() {
+    return {
+      restict: 'E',
+      templateUrl: 'js/sudoku/directives/templates/sudokuMainBox.html'
+    };
+  }]);

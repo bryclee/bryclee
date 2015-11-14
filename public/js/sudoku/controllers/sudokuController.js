@@ -1,18 +1,12 @@
 'use strict';
 
-define([
-  'angular'
-], function(angular) {
+import 'angular';
 
-  var moduleName = 'sudokuControllerModule';
+export var moduleName = 'sudokuControllerModule';
 
-  angular
-    .module(moduleName, [])
-    .controller('sudokuController', ['$scope',
-      function($scope) {
-        console.log('sudokuController');
-    }]);
-
-  return moduleName;
-
-});
+angular
+  .module(moduleName, [])
+  .controller('sudokuController', ['$scope',
+    function($scope) {
+      console.log('sudokuController');
+  }]);
