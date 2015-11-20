@@ -9,7 +9,7 @@
 
 {<body}
 
-  <sudoku-main-box ng-controller="sudokuController"></sudoku-main-box>
+  <sudoku-main-box></sudoku-main-box>
 
   <script src="js/app.bundle.js"></script>
 

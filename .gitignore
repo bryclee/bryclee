@@ -1,3 +1,4 @@
 node_modules
 public/components
 .build/
+npm-debug.log

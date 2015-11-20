@@ -1,10 +1,6 @@
 'use strict';
 
 import 'angular';
+import 'sudoku/sudokuMainBox/index';
 
-import {moduleName as sudokuController} from 'sudoku/controllers/sudokuController';
-import {moduleName as sudokuMainBoxDirective} from 'sudoku/directives/sudokuMainBox';
-
-console.log(sudokuController, sudokuMainBoxDirective);
-
-angular.bootstrap(document, [sudokuController, sudokuMainBoxDirective]);
+angular.bootstrap(document, ['sudokuMainBoxDirective']);
