@@ -1,10 +1,9 @@
 'use strict';
 
 import 'angular';
+import 'sudoku/sudokuFocus/index.js';
 
-var moduleName = 'sudokuSingleBoxDirective';
-
-var keys = {
+var KEYS = {
   'LEFT': 37,
   'UP': 38,
   'RIGHT': 39,
@@ -13,8 +12,9 @@ var keys = {
   'TAB': 9
 };
 
+
 angular
-  .module(moduleName, [])
+  .module('sudokuSingleBox', ['sudokuFocus'])
   .directive('sudokuSingleBox', [function() {
     return {
       restrict: 'E',
@@ -23,12 +23,14 @@ angular
       scope: {
         'mainIndex': '@',
         'subIndex': '@',
-        'onChange': '&'
+        'onChange': '&',
+        'focused': '='
       },
       link: function(scope, element, attrs) {
+        console.log('singleBox focused value:', scope.focused);
 
         scope.submitChange = function(value) {
-          console.log(arguments);
+          console.log('singleBox submit change:', arguments);
           scope.onChange({value: value, idx:scope.mainIndex, subIdx: scope.subIndex})
         };
 
@@ -43,6 +45,7 @@ angular
           }
         });
 
+        scope.$on('$destroy', () => {element.off('keydown')});
       }
     };
   }]);

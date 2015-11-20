@@ -3,4 +3,4 @@
 import 'angular';
 import 'sudoku/sudokuMainBox/index';
 
-angular.bootstrap(document, ['sudokuMainBoxDirective']);
+angular.bootstrap(document, ['sudokuMainBox']);
