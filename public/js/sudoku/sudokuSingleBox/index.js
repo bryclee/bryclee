@@ -1,51 +1,62 @@
 'use strict';
 
 import 'angular';
-import 'sudoku/sudokuFocus/index.js';
-
-var KEYS = {
-  'LEFT': 37,
-  'UP': 38,
-  'RIGHT': 39,
-  'DOWN': 40,
-  'BKSP': 8,
-  'TAB': 9
-};
-
+import 'sudoku/sudokuFocus/index';
+import 'sudoku/sudokuKeycodes/index';
 
 angular
-  .module('sudokuSingleBox', ['sudokuFocus'])
-  .directive('sudokuSingleBox', [function() {
-    return {
-      restrict: 'E',
-      replace: true,
-      templateUrl: 'js/sudoku/sudokuSingleBox/template.html',
-      scope: {
-        'mainIndex': '@',
-        'subIndex': '@',
-        'onChange': '&',
-        'focused': '='
-      },
-      link: function(scope, element, attrs) {
-        console.log('singleBox focused value:', scope.focused);
+  .module('sudokuSingleBox', [
+    'sudokuFocus',
+    'sudokuKeycodes'
+  ])
+  .directive('sudokuSingleBox', [
+    'sudokuKeycodes',
+    function(KEYS) {
 
-        scope.submitChange = function(value) {
-          console.log('singleBox submit change:', arguments);
-          scope.onChange({value: value, idx:scope.mainIndex, subIdx: scope.subIndex})
-        };
+      return {
+        restrict: 'E',
+        replace: true,
+        templateUrl: 'js/sudoku/sudokuSingleBox/template.html',
+        scope: {
+          'mainIndex': '@',
+          'subIndex': '@',
+          'onChange': '&',
+          'navigate': '&',
+          'focused': '='
+        },
+        link: function(scope, element, attrs) {
+          var navigate = scope.navigate;
 
-        element.on('keydown', function keyHandler(e) {
-          var key = e.keyCode;
-          var character = String.fromCharCode(key);
+          function updateValue(value) {
+            scope.onChange({value: value, idx:scope.mainIndex, subIdx: scope.subIndex})
+          };
 
-          if (character >= 1 && character <= 9 || key === 8) {
-            scope.value = '';
-          } else if (key !== 9) {
+          scope.keyHandler = function(e) {
+            var key = e.keyCode;
+            var main = parseInt(scope.mainIndex);
+            var sub = parseInt(scope.subIndex);
+
+            if (key >= 48 && key <= 58) {
+              scope.value = key - 48;
+              updateValue(scope.value);
+              e.preventDefault();
+              return;
+            }
+            switch (key) {
+              case KEYS.LEFT:
+              case KEYS.UP:
+              case KEYS.RIGHT:
+              case KEYS.DOWN:
+                navigate({dir:key, main:main, sub:sub});
+                break;
+              case KEYS.BKSP:
+                scope.value = '';
+                break;
+              default:
+                return;
+            }
             e.preventDefault();
-          }
-        });
-
-        scope.$on('$destroy', () => {element.off('keydown')});
-      }
-    };
-  }]);
+          };
+        }
+      };
+    }]);

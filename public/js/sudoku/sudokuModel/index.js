@@ -3,16 +3,6 @@
 import 'angular';
 
 
-function createArray(n, value) {
-  return Array.apply(null, Array(n)).map(() => {
-    if (typeof value === 'function') {
-      return value();
-    }
-    return value;
-  });
-};
-
-
 angular.module('sudokuModel', [])
   .factory('sudokuModel', [function() {
     // Returns a constructor for sudoku model, which manages data and validation
@@ -41,3 +31,13 @@ angular.module('sudokuModel', [])
 
     return SudokuModel;
   }]);
+
+
+function createArray(n, value) {
+  return Array.apply(null, Array(n)).map(() => {
+    if (typeof value === 'function') {
+      return value();
+    }
+    return value;
+  });
+};

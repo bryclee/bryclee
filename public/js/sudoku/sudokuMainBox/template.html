@@ -2,7 +2,8 @@
   <div class="sudoku-sub-box" ng-repeat="n in [1,2,3,4,5,6,7,8,9] track by $index">
     <sudoku-single-box ng-repeat="m in [1,2,3,4,5,6,7,8,9] track by $index"
       main-index="{{n}}" sub-index="{{m}}"
-      on-change="boxChange(value, idx, subIdx)"
+      navigate="navigator(dir, main, sub)"
+      on-change="updateValue(value, idx, subIdx)"
       focused="mainSelect === n && subSelect === m">
     </sudoku-single-box>
   </div>
